@@ -13,7 +13,12 @@ public class RunBot {
 
 	public static void main(String[] args) {
 		
-		DateFormat dateFormat = new SimpleDateFormat("EE dd.MM", Locale.GERMANY);
+		
+		String test="";
+		test=new Verkehrslage().getVerkehrslageAsString();
+		System.out.println(test);
+		
+		/*DateFormat dateFormat = new SimpleDateFormat("EE dd.MM", Locale.GERMANY);
 		Date date = new Date();
 		
 		
@@ -36,6 +41,7 @@ public class RunBot {
 			e.printStackTrace();
 		}
 	    System.out.println("Successfully updated the status to [" + status.getText() + "].");
+	*/
 	}
 
 }
