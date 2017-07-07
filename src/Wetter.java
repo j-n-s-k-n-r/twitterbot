@@ -37,15 +37,16 @@ public class Wetter {
 					// System.out.println(inhaltSchleife);
 					if (inhaltSchleife.contains("Morgen")) {
 						richtigerTeil = true;
-						// System.out.println("wirdTrue");
 					}
+					
 					if (inhaltSchleife.contains("Die weiteren Aussichten")) {
 						break;
 					}
 
 					if (richtigerTeil == true) {
-						inhalt = inhalt + inhaltSchleife; // + br.readLine();
+						inhalt = inhalt + inhaltSchleife;
 					}
+					
 					if (inhaltSchleife.isEmpty() == true) {
 						i++;
 					} else {
@@ -55,7 +56,7 @@ public class Wetter {
 					if (i == 5) {
 						inboxEnde5 = true;
 					}
-					
+
 				}
 				br.close();
 
@@ -75,11 +76,7 @@ public class Wetter {
 		for (int j = 0; j < teilStueck.length; j++) {
 
 			if (teilStueck[j].contains("Morgen") == true) {
-				/*
-				 * System.out.println(teilStueck[j]);
-				 * System.out.println(teilStueck[j+1]);
-				 * System.out.println(teilStueck[j+2]);
-				 */
+
 				ready2Tweet = ready2Tweet + "Morgens" + teilStueck[j + 1] + teilStueck[j + 2];
 				ready2Tweet = ready2Tweet + "\n";
 
