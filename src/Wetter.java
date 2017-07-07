@@ -55,8 +55,9 @@ public class Wetter {
 					if (i == 5) {
 						inboxEnde5 = true;
 					}
-					br.close();
+					
 				}
+				br.close();
 
 			} catch (IOException e1) {
 				System.out.println("Error1");

@@ -8,7 +8,7 @@ public class Verkehrslage {
 	public String getVerkehrslageAsString() {
 		
 		//Unstable Class 
-		/*
+		
 		String inhalt = "";
 		FileReader fr;
 		try {
@@ -29,20 +29,17 @@ public class Verkehrslage {
 
 					inhaltSchleife = "";
 					inhaltSchleife = br.readLine();
-					// System.out.println(inhaltSchleife);
 					if (inhaltSchleife.contains("Hier die von Ihnen angeforderten Staumeldungen")) {
 						richtigerTeil = true;
-						System.out.println("wirdTrue");
+						//System.out.println("wirdTrue");
 					}
 					if (inhaltSchleife.contains(
 							"Alle Suchergebnisse sind ohne Gewähr und erheben keinen Anspruch auf Vollständigkeit und Aktualität.")) {
 						break;
-						// richtigerTeil= false;
-						// System.out.println("getFalse");
+						
 					}
 
 					if (richtigerTeil == true) {
-						System.out.println("D3");
 						inhalt = inhalt + inhaltSchleife; // + br.readLine();
 					}
 					if (inhaltSchleife.isEmpty() == true) {
@@ -51,12 +48,14 @@ public class Verkehrslage {
 						i = 0;
 					}
 
-					if (i == 5) {
+					if (i == 10) {
 						inboxEnde5 = true;
 					}
-					br.close();
+					
 				}
 
+				br.close();
+				
 			} catch (IOException e1) {
 				System.out.println("Error1");
 				e1.printStackTrace();
@@ -67,8 +66,23 @@ public class Verkehrslage {
 			e2.printStackTrace();
 		}
 
-		String[] abschnitte = inhalt.split("[");
 		String meldungen ="";
+		
+		if(inhalt.contains("[ A42 ]"))
+				{
+					meldungen= meldungen + "Stau auf A42 | ";
+				}
+		if(inhalt.contains("[ A59 ]"))
+				{
+					meldungen= meldungen + "Stau auf A59 | ";
+				}
+		if(inhalt.contains("[ A3 ]"))
+				{
+					meldungen= meldungen + "Stau auf A3 ";
+				}
+		/*
+		String[] abschnitte = inhalt.split("[");
+		//String meldungen ="";
 		String[] A42Meldungen;
 		for (int j =0; j<abschnitte.length;j++)
 		{
@@ -84,7 +98,7 @@ public class Verkehrslage {
 		System.out.println(meldungen);
 		
 		*/
-		return "kein Stau => kein Wunder auch ";
+		return meldungen;
 		
 	}
 }

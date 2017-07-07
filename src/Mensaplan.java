@@ -16,7 +16,7 @@ public class Mensaplan {
 	    try {
 	        url = new URL("https://www.stw-d.de/gastronomie/speiseplaene/mensa-kamp-lintfort/");
 	        is = url.openStream();  // throws an IOException
-	        br = new BufferedReader(new InputStreamReader(is));
+	        br = new BufferedReader(new InputStreamReader(is, "UTF8"));
 
 	        while( (line = br.readLine() ) != null) {
 	            html = html + line;
